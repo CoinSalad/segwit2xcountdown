@@ -20,6 +20,21 @@
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/segwit2xcountdown/assets/css/style.css?v=a94423cbd6c932e40f095b87cbc2928a365535ab">
+    <style>
+#countdown {
+  font-size:38px;
+  color:#000;
+  padding:25px 0px;
+}
+
+#countdown span {
+  margin:5px;
+  border:2px solid #ddd;
+  border-radius:2px;
+  padding:10px;
+  box-shadow: 1px 1px 1px #999;
+}
+    </style>
   </head>
   <body>
     <section class="page-header">
@@ -27,7 +42,6 @@
     </section>
 
     <section class="main-content">
-      <h1>SegWit2X Simple Countdown Timer</h1>
 <div id="countdown" class="timer"></div>
 <script>
 var segwit2x = 3734400;
@@ -54,8 +68,8 @@ var countdownTimer = setInterval('timer()', 1000);
 </script>
       
       <div id="explain">
-Bitcoin is forking based on the SegWit2X code on block height 494784. This is a simple count down timer that calculates the targeted fork block height minus the current block height 488560 (when this was written) multiplied by the Bitcoin 10 minute block intervals.
-<br>
+Bitcoin is forking based on the SegWit2X code on <a href="https://segwit2x.github.io/segwit2x-announce.html">block height 494784</a>. This is a simple count down timer that calculates the targeted fork block height minus the current block height 488560 (when this was written) multiplied by the Bitcoin 10 minute block intervals.
+<br><br>
 <pre>Calculation: (494784 - 488560) * (10) * (60)</pre>
       </div>
       
