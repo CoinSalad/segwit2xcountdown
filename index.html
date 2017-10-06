@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -22,18 +21,27 @@
     <link rel="stylesheet" href="/segwit2xcountdown/assets/css/style.css?v=a94423cbd6c932e40f095b87cbc2928a365535ab">
     <style>
 #countdown {
+  font-family: consolas;
   font-size:38px;
-  color:#000;
+  color:#333;
   padding:25px 0px;
 }
 
 #countdown span {
-  margin:5px;
+  margin-right:10px;
   border:2px solid #ddd;
   border-radius:2px;
-  padding:10px;
+  padding:20px 10px;
   box-shadow: 1px 1px 1px #999;
 }
+ 
+#explain {
+  margin-top:20px;
+}
+
+.site-footer {
+  margin-top:-5px;
+}    
     </style>
   </head>
   <body>
@@ -68,13 +76,13 @@ var countdownTimer = setInterval('timer()', 1000);
 </script>
       
       <div id="explain">
-Bitcoin is forking based on the SegWit2X code on <a href="https://segwit2x.github.io/segwit2x-announce.html">block height 494784</a>. This is a simple count down timer that calculates the targeted fork block height minus the current block height 488560 (when this was written) multiplied by the Bitcoin 10 minute block intervals.
+Bitcoin is forking based on the SegWit2X code on <a href="https://segwit2x.github.io/segwit2x-announce.html">block height 494784</a>. This is a simple count down timer that calculates the targeted fork block height minus the current block height 488560 (when this was written) multiplied by the Bitcoin 10 minute block interval times.
 <br><br>
-<pre>Calculation: (494784 - 488560) * (10) * (60)</pre>
+<pre>Timer Calculation: (494784 - 488560) * (10) * (60)</pre>
       </div>
       
       <footer class="site-footer">
-          <span class="site-footer-owner"><a href="https://github.com/CoinSalad/segwit2xcountdown">SegWit2X Simple Countdown Timer</a> is maintained by <a href="https://coinsalad.com">CoinSalad.com</a>.</span>
+          <span class="site-footer-owner"><a href="https://github.com/CoinSalad/segwit2xcountdown">SegWit2X Simple Countdown Timer</a> was created and is maintained by <a href="https://coinsalad.com">CoinSalad.com</a>.</span>
       </footer>
     </section>
   </body>
