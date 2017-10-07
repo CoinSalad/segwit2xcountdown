@@ -71,33 +71,43 @@
     <section class="main-content">
 <div id="countdown" class="timer"></div>
 <script>
-var segwit2x = 3734400;
-var seconds = segwit2x;
-function timer() {
-    var days        = Math.floor(seconds/24/60/60);
-    var hoursLeft   = Math.floor((seconds) - (days*86400));
-    var hours       = Math.floor(hoursLeft/3600);
-    var minutesLeft = Math.floor((hoursLeft) - (hours*3600));
-    var minutes     = Math.floor(minutesLeft/60);
-    var remainingSeconds = seconds % 60;
-    if (remainingSeconds < 10) {
-        remainingSeconds = "0" + remainingSeconds; 
+// timer calc is 3645600 seconds which is 42d 4h 40m from now
+var segwit2x = new Date('11/18/2017 2:15 PM');
+
+    var _second = 1000;
+    var _minute = _second * 60;
+    var _hour = _minute * 60;
+    var _day = _hour * 24;
+    var timer;
+
+    function showRemaining() {
+        var now = new Date();
+        var distance = segwit2x - now;
+        if (distance < 0) {
+
+            clearInterval(timer);
+            document.getElementById('countdown').innerHTML = "It's the great forkening! Today is the 2X fork day.";
+
+            return;
+        }
+        var days = Math.floor(distance / _day);
+        var hours = Math.floor((distance % _day) / _hour);
+        var minutes = Math.floor((distance % _hour) / _minute);
+        var seconds = Math.floor((distance % _minute) / _second);
+
+        document.getElementById('countdown').innerHTML = "<span>" + days + " days </span>";
+        document.getElementById('countdown').innerHTML += "<span>" + hours + " hours </span>";
+        document.getElementById('countdown').innerHTML += "<span>" + minutes + " minutes </span>";
+        document.getElementById('countdown').innerHTML += "<span>" + seconds + " seconds </span>";
     }
-    document.getElementById('countdown').innerHTML = "<span>" + days + " days</span><span>" + hours + " hours</span><span>" + minutes + " minutes</span><span>" + remainingSeconds + " seconds</span>";
-    if (seconds == 0) {
-        clearInterval(countdownTimer);
-        document.getElementById('countdown').innerHTML = "It's the forkening! Bitcoin has forked to 2X.";
-    } else {
-        seconds--;
-    }
-}
-var countdownTimer = setInterval('timer()', 1000);
+
+    timer = setInterval(showRemaining, 1000);
 </script>
       
       <div id="explain">
 Bitcoin is upgrading (forking) in November based on the SegWit2X code on <a href="https://segwit2x.github.io/segwit2x-announce.html">block height 494784</a>. This is a simple count down timer that calculates the targeted fork block height minus the current block height 488560 (when this was written) multiplied by the Bitcoin 10 minute block interval times.
 <br><br>
-<pre>Timer Calculation: (494784 - 488560) * (10) * (60)</pre>
+<pre>Timer Calculation: (494784 - 488708) * (10) * (60)</pre>
       </div>
       
       <footer class="site-footer">
