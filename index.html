@@ -71,47 +71,43 @@
     <section class="main-content">
 <div id="countdown" class="timer"></div>
 <script>
-// timer calc is 3645600 seconds which is 42d 4h 40m from now
+// timer calc is 3645600 seconds which counts down 42d 4h 40m from now
 var segwit2x = new Date('11/18/2017 2:15 PM');
-
     var _second = 1000;
     var _minute = _second * 60;
     var _hour = _minute * 60;
     var _day = _hour * 24;
     var timer;
-
+  
     function showRemaining() {
         var now = new Date();
         var distance = segwit2x - now;
         if (distance < 0) {
-
             clearInterval(timer);
-            document.getElementById('countdown').innerHTML = "It's the great forkening! Today is the 2X fork day.";
-
+            document.getElementById('countdown').innerHTML = "It's the great forkening! Today is the 2X fork.";
             return;
         }
         var days = Math.floor(distance / _day);
         var hours = Math.floor((distance % _day) / _hour);
         var minutes = Math.floor((distance % _hour) / _minute);
         var seconds = Math.floor((distance % _minute) / _second);
-
+      
         document.getElementById('countdown').innerHTML = "<span>" + days + " days </span>";
         document.getElementById('countdown').innerHTML += "<span>" + hours + " hours </span>";
         document.getElementById('countdown').innerHTML += "<span>" + minutes + " minutes </span>";
         document.getElementById('countdown').innerHTML += "<span>" + seconds + " seconds </span>";
     }
-
     timer = setInterval(showRemaining, 1000);
 </script>
       
       <div id="explain">
-Bitcoin is upgrading (forking) in November based on the SegWit2X code on <a href="https://segwit2x.github.io/segwit2x-announce.html">block height 494784</a>. This is a simple count down timer that calculates the targeted fork block height minus the current block height 488560 (when this was written) multiplied by the Bitcoin 10 minute block interval times.
+Bitcoin is upgrading (forking) in November based on the SegWit2X code on <a target="_blank" href="https://segwit2x.github.io/segwit2x-announce.html">block height 494784</a>. This is a simple count down timer that calculates the targeted fork block height minus the current block height 488708 (when this was written) multiplied by the Bitcoin 10 minute block interval times.
 <br><br>
 <pre>Timer Calculation: (494784 - 488708) * (10) * (60)</pre>
       </div>
       
       <footer class="site-footer">
-          <span class="site-footer-owner"><a href="https://github.com/CoinSalad/segwit2xcountdown">SegWit2X Simple Countdown Timer</a> was created and is maintained by <a href="https://coinsalad.com">CoinSalad.com</a>.</span>
+          <span class="site-footer-owner"><a target="_blank" href="https://github.com/CoinSalad/segwit2xcountdown">SegWit2X Simple Countdown Timer</a> was created and is maintained by <a target="_blank" href="https://coinsalad.com">CoinSalad.com</a>.</span>
       </footer>
     </section>
 </body>
