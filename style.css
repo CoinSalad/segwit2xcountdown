@@ -1,0 +1,41 @@
+.project-name::after { 
+  display:block;
+  color:#ccc;
+  font-size:18px;
+  opacity: 0.4;
+  font-family: consolas;
+  font-style: italic;
+  content: "Bitcoin forks in...";
+}
+      
+#countdown {
+  font-family: consolas;
+  font-size:36px;
+  color:#333;
+  padding:25px 0px;
+}
+
+#countdown span {
+  display:inline-block;
+  margin-right:10px;
+  border:1px solid #eee;
+  border-radius:2px;
+  padding:20px 10px;
+  box-shadow: 1px 1px 1px #999;
+}
+ 
+#explain {
+  margin-top:20px;
+}
+
+.site-footer {
+  margin-top:-5px;
+}    
+      
+/* Media queries */
+@media only screen and (max-device-width: 485px) 
+{
+ #countdown span {
+  display:block;
+ }
+}
