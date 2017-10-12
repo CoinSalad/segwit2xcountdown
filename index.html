@@ -27,18 +27,18 @@
     </section>
 
     <section class="main-content">
-<div id="countdown" class="timer"></div>
-<script>
-// Timer calc (hard fork block height - current block height) * 10 * 60
-// Get updated countdown date http://coinsalad.com/tools/2x-forkdate
-// Update every ~2016 blocks when Legacy chain difficulty changes https://coinsalad.com/bitcoincash/difficulty
+    <div id="countdown" class="timer"></div>
+    <script>
+    // Timer calc (hard fork block height - current block height) * 10 * 60
+    // Get updated countdown date https://coinsalad.com/tools/2x-forkdate
+    // Update every ~2016 blocks when Legacy chain difficulty changes https://coinsalad.com/bitcoincash/difficulty
   
-var segwit2x = new Date('11/18/2017 2:15 PM');
-    var _second = 1000;
-    var _minute = _second * 60;
-    var _hour = _minute * 60;
-    var _day = _hour * 24;
-    var timer;
+    var segwit2x = new Date('11/18/2017 2:15 PM');
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
   
     function showRemaining() {
         var now = new Date();
@@ -59,7 +59,7 @@ var segwit2x = new Date('11/18/2017 2:15 PM');
         document.getElementById('countdown').innerHTML += "<span>" + seconds + " seconds </span>";
     }
     timer = setInterval(showRemaining, 1000);
-</script>
+    </script>
       
       <div id="explain">
 Bitcoin is upgrading (forking) on or around November 18, 2017 based on the SegWit2X code on <a target="_blank" href="https://segwit2x.github.io/segwit2x-announce.html">block height 494784</a>. This is a simple count down timer that calculates the targeted fork block height minus the last updated block height (updated every ~2016 blocks) multiplied by the Bitcoin 10 minute block time interval. This is a rough estimate and unfortunately not 100% accurate since not all Bitcoin blocks are found exactly in 10 minute intervals due to the time in between difficulty adjustments as explained <a target="_blank" href="https://bitcoin.stackexchange.com/a/859/38837">here</a>.
